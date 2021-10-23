@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1457104-a0d9-46f7-89b5-381c402701ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api_service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python-microservices-with-grpc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_and_run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build_and_run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ca.key" beforeDir="false" afterPath="$PROJECT_DIR$/ca.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ca.pem" beforeDir="false" afterPath="$PROJECT_DIR$/ca.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.csr" beforeDir="false" afterPath="$PROJECT_DIR$/client.csr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.key" beforeDir="false" afterPath="$PROJECT_DIR$/client.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.pem" beforeDir="false" afterPath="$PROJECT_DIR$/client.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen_certs.sh" beforeDir="false" afterPath="$PROJECT_DIR$/gen_certs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/marketplace.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/recommendations_pb2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/recommendations_pb2_grpc.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/api_service_pb2_grpc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysqldb/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysqldb/mysq.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysqldb/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/protobufs/recommendations.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protobufs/api_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendations/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendations/recommendations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendations/recommendations_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_service/api_service_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendations/recommendations_pb2_grpc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendations/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api_service/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.csr" beforeDir="false" afterPath="$PROJECT_DIR$/server.csr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.key" beforeDir="false" afterPath="$PROJECT_DIR$/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.pem" beforeDir="false" afterPath="$PROJECT_DIR$/server.pem" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user_service/templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user_service/templates" />
+      <recent name="$PROJECT_DIR$/user_service" />
+      <recent name="$PROJECT_DIR$/userService" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>

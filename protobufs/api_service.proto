@@ -29,7 +29,7 @@ message EmptyResponse
     repeated Empty res = 1;
 }
 
-service Recommendations {
-    rpc Recommend (DataRequest) returns (DataResponse);
+service ApiService {
+    rpc Get(DataRequest) returns (DataResponse);
     rpc Init(EmptyRequest) returns (EmptyResponse);
 }

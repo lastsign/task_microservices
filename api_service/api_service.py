@@ -7,18 +7,18 @@ from grpc_interceptor.exceptions import NotFound
 import mysql.connector
 import json
 
-from recommendations_pb2 import (
+from api_service_pb2 import (
     Data,
     DataResponse,
     Empty,
     EmptyResponse
 )
-import recommendations_pb2_grpc
+import api_service_pb2_grpc
 
 
-class RecommendationService(recommendations_pb2_grpc.RecommendationsServicer):
+class ApiServiceService(api_service_pb2_grpc.ApiServiceServicer):
 
-    def Recommend(self, request, context):
+    def Get(self, request, context):
         mydb = mysql.connector.connect(
             host="mysqldb",
             user="root",
@@ -54,8 +54,8 @@ class RecommendationService(recommendations_pb2_grpc.RecommendationsServicer):
 
         cursor.execute("DROP TABLE IF EXISTS data")
         cursor.execute("CREATE TABLE data (id INTEGER AUTO_INCREMENT PRIMARY KEY, a DOUBLE, b DOUBLE)")
-        for i in range(1000):
-            cursor.execute(f"INSERT INTO data (a, b) VALUES ({random.uniform(-2., 2.)}, {random.uniform(-2., 2.)})")
+        for _ in range(1000):
+            cursor.execute(f"INSERT INTO data (a, b) VALUES ({random.uniform(-25., 26.)}, {random.uniform(-25., 26.)})")
         mydb.commit()
         cursor.close()
         return EmptyResponse(res=[Empty()])
@@ -66,8 +66,8 @@ def serve():
     server = grpc.server(
         futures.ThreadPoolExecutor(max_workers=10), interceptors=interceptors
     )
-    recommendations_pb2_grpc.add_RecommendationsServicer_to_server(
-        RecommendationService(), server
+    api_service_pb2_grpc.add_ApiServiceServicer_to_server(
+        ApiServiceService(), server
     )
 
     with open("server.key", "rb") as fp:

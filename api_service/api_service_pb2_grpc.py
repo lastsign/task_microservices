@@ -2,10 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import recommendations_pb2 as recommendations__pb2
+import api_service_pb2 as api__service__pb2
 
 
-class RecommendationsStub(object):
+class ApiServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -14,22 +14,22 @@ class RecommendationsStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Recommend = channel.unary_unary(
-                '/Recommendations/Recommend',
-                request_serializer=recommendations__pb2.DataRequest.SerializeToString,
-                response_deserializer=recommendations__pb2.DataResponse.FromString,
+        self.Get = channel.unary_unary(
+                '/ApiService/Get',
+                request_serializer=api__service__pb2.DataRequest.SerializeToString,
+                response_deserializer=api__service__pb2.DataResponse.FromString,
                 )
         self.Init = channel.unary_unary(
-                '/Recommendations/Init',
-                request_serializer=recommendations__pb2.EmptyRequest.SerializeToString,
-                response_deserializer=recommendations__pb2.EmptyResponse.FromString,
+                '/ApiService/Init',
+                request_serializer=api__service__pb2.EmptyRequest.SerializeToString,
+                response_deserializer=api__service__pb2.EmptyResponse.FromString,
                 )
 
 
-class RecommendationsServicer(object):
+class ApiServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Recommend(self, request, context):
+    def Get(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -42,30 +42,30 @@ class RecommendationsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_RecommendationsServicer_to_server(servicer, server):
+def add_ApiServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Recommend': grpc.unary_unary_rpc_method_handler(
-                    servicer.Recommend,
-                    request_deserializer=recommendations__pb2.DataRequest.FromString,
-                    response_serializer=recommendations__pb2.DataResponse.SerializeToString,
+            'Get': grpc.unary_unary_rpc_method_handler(
+                    servicer.Get,
+                    request_deserializer=api__service__pb2.DataRequest.FromString,
+                    response_serializer=api__service__pb2.DataResponse.SerializeToString,
             ),
             'Init': grpc.unary_unary_rpc_method_handler(
                     servicer.Init,
-                    request_deserializer=recommendations__pb2.EmptyRequest.FromString,
-                    response_serializer=recommendations__pb2.EmptyResponse.SerializeToString,
+                    request_deserializer=api__service__pb2.EmptyRequest.FromString,
+                    response_serializer=api__service__pb2.EmptyResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Recommendations', rpc_method_handlers)
+            'ApiService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class Recommendations(object):
+class ApiService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Recommend(request,
+    def Get(request,
             target,
             options=(),
             channel_credentials=None,
@@ -75,9 +75,9 @@ class Recommendations(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Recommendations/Recommend',
-            recommendations__pb2.DataRequest.SerializeToString,
-            recommendations__pb2.DataResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/ApiService/Get',
+            api__service__pb2.DataRequest.SerializeToString,
+            api__service__pb2.DataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -92,8 +92,8 @@ class Recommendations(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Recommendations/Init',
-            recommendations__pb2.EmptyRequest.SerializeToString,
-            recommendations__pb2.EmptyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/ApiService/Init',
+            api__service__pb2.EmptyRequest.SerializeToString,
+            api__service__pb2.EmptyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
