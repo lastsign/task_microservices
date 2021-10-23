@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Online Books For You</title>
+</head>
+<body>
+        Our Flask Buttons
+    <form method="post" action="/">
+        <input type="text" name="query" size="50" required><br>
+        <input type="submit" value="Score" name="action1"/>
+    </form>
+    <h1>Mystery books you may like</h1>
+    <ul>
+        <li>{{ recommendations }}</li>
+    </ul>
+</body>

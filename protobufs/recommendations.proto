@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+message DataRequest {
+    int32 id = 1;
+}
+
+message Data {
+    int32 id = 1;
+    double a = 2;
+    double b = 3;
+}
+
+message DataResponse {
+    repeated Data rec = 1;
+}
+
+message EmptyRequest
+{
+
+}
+
+message Empty
+{
+
+}
+
+message EmptyResponse
+{
+    repeated Empty res = 1;
+}
+
+service Recommendations {
+    rpc Recommend (DataRequest) returns (DataResponse);
+    rpc Init(EmptyRequest) returns (EmptyResponse);
+}
