@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 import grpc
 import numpy as np
 import random
