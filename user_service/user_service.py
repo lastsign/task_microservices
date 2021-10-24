@@ -23,7 +23,6 @@ api_service_channel = grpc.secure_channel(
 )
 api_service_client = ApiServiceStub(api_service_channel)
 
-
 @app.route("/", methods=['GET', 'POST'])
 def render_homepage():
     if request.method == 'POST':
@@ -41,7 +40,7 @@ def render_homepage():
                 "homepage.html",
                 text=f'{round(1 / (1 + np.exp(-(a + b + c))), 6)}',
                 label=f'sigmoid score',
-                numbers=f'with a: {round(a, 6)}, b: {round(b, 6)}, c: {round(c, 6)}'
+                numbers=[f'a: {round(a, 6)}', f'b: {round(b, 6)}', f'c: {round(c, 6)}']
             )
     elif request.method == 'GET':
         api_service_request = EmptyRequest()
