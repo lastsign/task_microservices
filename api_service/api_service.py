@@ -55,7 +55,7 @@ class ApiServiceService(api_service_pb2_grpc.ApiServiceServicer):
         cursor.execute("DROP TABLE IF EXISTS data")
         cursor.execute("CREATE TABLE data (id INTEGER AUTO_INCREMENT PRIMARY KEY, a DOUBLE, b DOUBLE)")
         for _ in range(1000):
-            cursor.execute(f"INSERT INTO data (a, b) VALUES ({random.uniform(-25., 26.)}, {random.uniform(-25., 26.)})")
+            cursor.execute(f"INSERT INTO data (a, b) VALUES ({random.uniform(-6., 7.)}, {random.uniform(-6., 7.)})")
         mydb.commit()
         cursor.close()
         return EmptyResponse(res=[Empty()])
