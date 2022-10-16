@@ -1,4 +1,0 @@
-grpc-interceptor ~= 0.13.0
-grpcio-tools ~= 1.41.0
-Jinja2 ~= 3.0.2
-mysql-connector-python ~= 8.0.27

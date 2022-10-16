@@ -1,0 +1,9 @@
+# NVidia quartznet
+mkdir -p model_repository/quartz/1
+wget --content-disposition https://api.ngc.nvidia.com/v2/models/nvidia/quartznet15x5/versions/2/zip -O /tmp/quartznet15x5_2.zip
+(cd /tmp && unzip -o quartznet15x5_2.zip)
+ls /tmp/quartznet15x5
+mv /tmp/quartznet15x5/JasperDecoderForCTC-STEP-247400.pt model_repository/quartz/1/model.JasperDecoderForCTC
+mv /tmp/quartznet15x5/JasperEncoder-STEP-247400.pt model_repository/quartz/1/model.JasperEncoder
+mv /tmp/quartznet15x5/quartznet15x5.yaml model_repository/quartz/quartznet15x5.yaml
+
