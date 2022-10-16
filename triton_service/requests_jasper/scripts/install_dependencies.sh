@@ -1,5 +1,4 @@
 #!/usr/bin/sh
-mkdir -p dataset
 mkdir -p models
 mkdir -p config
 

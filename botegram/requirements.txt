@@ -2,4 +2,5 @@ requests
 pytelegrambotapi
 tritonclient
 geventhttpclient
+SoundFile
 pyyaml
