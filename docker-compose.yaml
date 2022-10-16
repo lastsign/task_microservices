@@ -1,16 +1,30 @@
-version: "3.3"
+version: "3.8"
 services:
 
-    # triton_service:
-    #     image: triton_service
-    #     networks:
-    #         - microservices
-    #     ports:
-    #         - 8000:8000
+    triton_service:
+        image: nvcr.io/nvidia/tritonserver:21.09-py3
+        networks:
+            - microservices
+        ports:
+            - 8000:8000
+            - 8001:8001
+            - 8002:8002
+        command: sh -c "cd /workspace/triton_service/requests_jasper && sh scripts/install_dependencies.sh && sh scripts/deploy_jasper.sh && tritonserver --model-repository=models && tail -f /dev/null"
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                      - driver: nvidia
+                        count: 0
+                        capabilities: [gpu]
+        # entrypoint: ["cd /workspace/triton_service/requests_jasper", "sh scripts/install_dependencies.sh", "sh scripts/deploy_jasper.sh", "tritonserver --model-repository=models", "tail -f /dev/null"]
+        volumes:
+            - .:/workspace
+
 
     botegram:
-        # environment:
-        #     API_SERVICE_HOST: triton_service
+        environment:
+            API_SERVICE_HOST: triton_service
         image: botegram
         networks:
             - microservices
@@ -18,6 +32,9 @@ services:
             - 55051:55051
         volumes:
             - ./:/app
+
+volumes:
+    requests_jasper:
 
 networks:
     microservices:
