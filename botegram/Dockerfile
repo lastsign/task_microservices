@@ -1,7 +1,7 @@
 FROM python
 
 RUN mkdir /app
-COPY bot.py ysk.py triton_client.py requirements.txt config.ini /app/
+COPY bot.py ysk.py triton_client.py requirements.txt config.ini utils/ /app/
 
 WORKDIR /app
 RUN pip install --upgrade pip
